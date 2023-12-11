@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Link, Outlet, useLocation } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -7,10 +8,6 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Index() {
-  return (
-    <h1 className="text-3xl font-bold underline text-red-900">
-      Hello world!
-    </h1>
-  );
+export default function Layout() {
+  return <Outlet />;
 }
