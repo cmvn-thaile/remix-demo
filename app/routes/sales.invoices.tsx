@@ -1,4 +1,4 @@
-import { LoaderFunction, json } from "@remix-run/node";
+import { type LoaderFunction, json } from "@remix-run/node";
 import { Link, Outlet, useLoaderData } from "@remix-run/react";
 import { prisma } from "~/server/prisma.server";
 
@@ -23,6 +23,7 @@ export default function Invoices() {
             invoices?.map((invoice: Invoice) => (
               <Link
                 key={invoice.id}
+                prefetch="intent"
                 to={`/sales/invoices/${invoice.id}`}
                 className="flex gap-24 items-center border-b p-3 border-gray-200"
               >
@@ -34,6 +35,7 @@ export default function Invoices() {
               </Link>
             ))}
         </ul>
+        <Link to={'/'}>Create</Link>
         <Outlet />
       </div>
     </div>
