@@ -8,6 +8,7 @@ export const loader: LoaderFunction = async ({ params }) => {
       id: params.invoiceId,
     },
   });
+  console.log('invoice')
 
   return json(invoice);
 };

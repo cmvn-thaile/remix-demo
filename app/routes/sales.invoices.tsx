@@ -4,6 +4,7 @@ import { prisma } from "~/server/prisma.server";
 
 export const loader: LoaderFunction = async () => {
   const invoices = await prisma.invoices.findMany();
+  console.log('invoices')
   return json(invoices);
 };
 interface Invoice {
