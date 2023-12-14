@@ -13,7 +13,7 @@ export const action: ActionFunction = async ({ request }) => {
   return redirect("/sales/invoices");
 };
 export default function InvoiceCreate() {
-  const navigate = useNavigate();
+
   return (
     <div
       aria-hidden="true"

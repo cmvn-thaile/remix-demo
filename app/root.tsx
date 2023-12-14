@@ -1,4 +1,4 @@
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction } from '@remix-run/node';
 import {
   Link,
   Links,
@@ -8,18 +8,18 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation,
-} from "@remix-run/react";
+} from '@remix-run/react';
 
-import stylesheet from "~/tailwind.css";
+import stylesheet from '~/tailwind.css';
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesheet },
+  { rel: 'stylesheet', href: stylesheet },
 ];
 
 export default function App() {
   const location = useLocation();
   const pathname = location.pathname;
-  const currentPath = pathname.split("/")[1];
+  const currentPath = pathname.split('/')[1];
   const activeClass = `bg-gray-200 font-bold py-2 ml-[-2px] border rounded-md`;
 
   return (
@@ -35,26 +35,26 @@ export default function App() {
           <aside className="h-[800px] w-[200px] bg-gray-100 flex border-l border-gray-500">
             <ul className=" w-full p-4 font-medium flex flex-col gap-6">
               <Link
-                to={"/dashboard"}
-                className={currentPath === "dashboard" ? `${activeClass}` : ""}
+                to={'/dashboard'}
+                className={currentPath === 'dashboard' ? `${activeClass}` : ''}
               >
                 <li className="pl-2">Dashboard</li>
               </Link>
               <Link
-                to={"/accounts"}
-                className={currentPath === "accounts" ? `${activeClass}` : ""}
+                to={'/accounts'}
+                className={currentPath === 'accounts' ? `${activeClass}` : ''}
               >
                 <li className="pl-2">Accounts</li>
               </Link>
               <Link
-                to={"/sales"}
-                className={currentPath === "sales" ? `${activeClass}` : ""}
+                to={'/sales'}
+                className={currentPath === 'sales' ? `${activeClass}` : ''}
               >
                 <li className="pl-2">Sales</li>
               </Link>
               <Link
-                to={"/reports"}
-                className={currentPath === "reports" ? `${activeClass}` : ""}
+                to={'/reports'}
+                className={currentPath === 'reports' ? `${activeClass}` : ''}
               >
                 <li className="pl-2">Report</li>
               </Link>
