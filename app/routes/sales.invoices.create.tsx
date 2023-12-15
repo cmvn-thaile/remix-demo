@@ -1,5 +1,5 @@
-import { ActionFunction, json, redirect } from "@remix-run/node";
-import { Form, useNavigate } from "@remix-run/react";
+import { type ActionFunction, redirect } from "@remix-run/node";
+import { Form } from "@remix-run/react";
 import { prisma } from "~/server/prisma.server";
 
 export const action: ActionFunction = async ({ request }) => {
