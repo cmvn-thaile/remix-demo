@@ -4,17 +4,16 @@ import { useLoaderData, useRouteError } from "@remix-run/react";
 import { prisma } from "~/server/prisma.server";
 
 export const loader: LoaderFunction = async ({ params }) => {
-  const error = false;
+  const errorId = "6576727167a3282f92e7d932";
 
-  if (error) {
-    throw new Error("Something went wrong");
-  }
   const invoice = await prisma.invoices.findUnique({
     where: {
       id: params.invoiceId,
     },
   });
-
+  if (errorId === invoice?.id) {
+    throw new Error("Something went wrong");
+  }
   return json(invoice);
 };
 
